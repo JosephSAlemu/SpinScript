@@ -4,6 +4,8 @@ A video game didn't have a feature to prevent users from spinning off rare stuff
 # What to install
 - Install Python 3.8
   > Any Python version that supports Pillow
+- Make sure pip is up to date
+  > python -m pip install --upgrade pip
 - Install OpenCV
   > pip install opencv-python (Windows)
 - Install Pyautogui
