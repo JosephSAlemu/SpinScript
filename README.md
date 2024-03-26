@@ -10,6 +10,8 @@ A video game didn't have a feature to prevent users from spinning off rare stuff
   > pip install pyautogui (Windows)
 - Install Pydirectinput
   > pip install pydirectinput (Windows)
+- Install Keyboard
+  > pip install keyboard
 - VScode or your favorite text editor
   > preferably NeoVim
 
