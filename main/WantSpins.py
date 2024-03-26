@@ -5,9 +5,9 @@ from PIL import Image
 import pydirectinput
 
 def load_images_from_folder():
-    folder = '.\WantSpin'
+    folder = '[Put Directory With Images Of Desired Spins Here] '
     images = []
-    # Supported image extensions
+    #Supported image extensions
     valid_extensions = [".jpg", ".jpeg", ".png", ".gif", ".bmp"]
     #Just getting every image from the File Path I specify
     for filename in os.listdir(folder):
@@ -32,17 +32,17 @@ def wantCheck(images):
 
 def Spin():
     #Code finds the spin button png and clicks it on full screen
-    loc = pyautogui.locateOnScreen('[Put Spin Button file path here]', confidence=0.9)
+    loc = pyautogui.locateOnScreen('[Put Spin Button File Path Here]', confidence=0.9)
     test = pyautogui.center(loc)
     images = load_images_from_folder()
     check = True
     while check:
         #Positions mouse to spin button
         pydirectinput.moveTo(test.x, test.y)
-        #Cause roblox doesn't like when you instantly teleport your cursor, this is here to have roblox re-register your mouse so you can auto click
+        #Game doesn't like when you instantly teleport your cursor for some reason, shifting it slightly to have it re-register your mouse so you can auto click.
         pydirectinput.moveTo(test.x, test.y+1)
         pydirectinput.leftClick()
-        #Sleep cause without it, it can't stop before recognizing images.
+        #Making the program sleep so things aren't spinned before being recognized images.
         time.sleep(.25)
         check = wantCheck(images)
 
