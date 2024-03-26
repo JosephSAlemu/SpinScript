@@ -1,17 +1,17 @@
 # SpinScript
 A video game didn't have a feature to prevent users from spinning off rare stuff, so I made something simple to help with that
 
-# What to install
+# What to install (Windows)
 - Install Python 3.8
   > Any Python version that supports Pillow
 - Make sure pip is up to date
   > python -m pip install --upgrade pip
 - Install OpenCV
-  > pip install opencv-python (Windows)
+  > pip install opencv-python
 - Install Pyautogui
-  > pip install pyautogui (Windows)
+  > pip install pyautogui
 - Install Pydirectinput
-  > pip install pydirectinput (Windows)
+  > pip install pydirectinput
 - Install Keyboard
   > pip install keyboard
 - VScode or your favorite text editor
