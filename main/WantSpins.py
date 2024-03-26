@@ -1,7 +1,6 @@
 import pyautogui
 import os
 import time
-from PIL import Image 
 import pydirectinput
 
 def load_images_from_folder():
