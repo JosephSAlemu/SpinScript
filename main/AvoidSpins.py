@@ -2,11 +2,13 @@ import pyautogui
 import os
 import time
 import pydirectinput
+import keyboard
+import threading
 
 def load_images_from_folder():
-    folder = '[Put Directory With Images Of Desired Spins Here]'
+    folder = '[Images Folder/Directory]'
     images = []
-    # Supported image extensions
+    #Supported image extensions
     valid_extensions = [".jpg", ".jpeg", ".png", ".gif", ".bmp"]
     #Just getting every image from the File Path I specify
     for filename in os.listdir(folder):
@@ -29,16 +31,22 @@ def avoidCheck(images):
     return common
 
 def Spin():
+    def stop():
+        event.set()
+        print("Script Ended")
+    #Threading so I can close the thread with the esc key
+    event = threading.Event()
+    keyboard.add_hotkey("esc", stop)
     #Code finds the spin button png and clicks it on full screen (don't mess with this). If you're spin button is green, this won't work (will fix in future)
-    loc = pyautogui.locateOnScreen('[Put Spin Button file path here]', confidence=0.9)
+    loc = pyautogui.locateOnScreen('[Spin Button png]', confidence=0.9)
     test = pyautogui.center(loc)
     images = load_images_from_folder()
     check = True
-    while check:
+    while check and not event.is_set():
         pydirectinput.moveTo(test.x, test.y)
         pydirectinput.moveTo(test.x, test.y+1)
         pydirectinput.leftClick()
         time.sleep(.25)
         check = avoidCheck(images)
 
-Spin()   
+Spin()
