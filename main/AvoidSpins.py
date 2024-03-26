@@ -5,7 +5,7 @@ from PIL import Image
 import pydirectinput
 
 def load_images_from_folder():
-    folder = '.\AvoidSpin'
+    folder = '[Put Directory With Images Of Desired Spins Here]'
     images = []
     # Supported image extensions
     valid_extensions = [".jpg", ".jpeg", ".png", ".gif", ".bmp"]
