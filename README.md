@@ -26,7 +26,7 @@ A video game didn't have a feature to prevent users from spinning off rare stuff
 
 -Screenshot what you don't want and put it in a file for the AvoidSpins script. Then set the file path to it.
 
--just do ctrl+C in the terminal you're running the script in to end the script prematurely.
+-Press esc key to end the script
 
 # Important
 - Pyautogui is not perfect at detecting images on the screen, so test the script before going for something rare
