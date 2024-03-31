@@ -46,7 +46,6 @@ def Spin():
         pydirectinput.moveTo(test.x, test.y)
         pydirectinput.moveTo(test.x, test.y+1)
         pydirectinput.leftClick()
-        time.sleep(.25)
         check = avoidCheck(images)
 
 Spin()
